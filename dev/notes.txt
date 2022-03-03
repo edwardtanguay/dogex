@@ -3,5 +3,6 @@
 - todos
 	- x list 5 breeds on a page
 	- x show dummy title
-	- show actual breed name (or none)
+	- x show actual breed name (or none)
+	- click on h3 and see dummy page with back click to see main page
 
