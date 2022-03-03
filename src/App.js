@@ -4,27 +4,27 @@ import './App.scss';
 const url = 'https://api.thedogapi.com/v1/images/search?limit=5';
 
 function App() {
-	const [breeds, setBreeds] = useState([]);
+	const [dogs, setDogs] = useState([]);
 
 	useEffect(() => {
 		(async () => {
 			const response = await fetch(url);
 			const data = await response.json();
-			setBreeds([...data]);
+			setDogs([...data]);
 		})();
 	}, []);
 
 	return (
 		<div className="App">
-			{breeds.length > 0 && (
+			{dogs.length > 0 && (
 				<>
 					<h1>Dog Breeds</h1>
-					<p>There are {breeds.length} breeds.</p>
-					<div className="breeds">
-						{breeds.map((breed, index) => {
+					<p>There are {dogs.length} dogs.</p>
+					<div className="dogs">
+						{dogs.map((dog, index) => {
 							return (
-								<div className="breed" key={index}>
-									
+								<div className="dog" key={index}>
+								<img src={dog.url} alt="dog" />
 								</div>
 							)
 						})}
