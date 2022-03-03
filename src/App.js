@@ -16,6 +16,14 @@ function App() {
 		})();
 	}, []);
 
+	const getBreedName = (dog) => {
+		if (dog.breeds.length === 0) {
+			return '(no breed information)';
+		} else {
+			return dog.breeds[0].name;
+		}
+	}
+
 	return (
 		<div className="App">
 			{dogs.length > 0 && (
@@ -25,9 +33,12 @@ function App() {
 					<Flex className="container" color='white' flexWrap='wrap'>
 						{dogs.map((dog, index) => {
 							return (
-								<Box className="dog" w='100%' p={4} color='white'>
-									<img src={dog.url} alt="dog" />
-								</Box>
+								<div key={index}>
+									<Box className="dog" w='100%' p={4} color='white'>
+										<h3>{getBreedName(dog)}</h3>
+										<img src={dog.url} alt="dog" />
+									</Box>
+								</div>
 							)
 						})}
 					</Flex>

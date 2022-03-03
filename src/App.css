@@ -40,6 +40,6 @@ body {
 
 @media (max-width: 577px) {
   .App .container .dog {
-    max-width: 100%;
+    max-width: 300px;
   }
 }

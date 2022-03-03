@@ -1,5 +1,7 @@
 - info
 	- https://api.thedogapi.com/v1/images/search?limit=5
 - todos
-	- list 5 breeds on a page
+	- x list 5 breeds on a page
+	- x show dummy title
+	- show actual breed name (or none)
 
