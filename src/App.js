@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.scss';
+import { Flex } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 
 const url = 'https://api.thedogapi.com/v1/images/search?limit=5';
 
@@ -20,15 +22,15 @@ function App() {
 				<>
 					<h1>Dog Breeds</h1>
 					<p>There are {dogs.length} dogs.</p>
-					<div className="dogs">
+					<Flex className="container" color='white' flexWrap='wrap'>
 						{dogs.map((dog, index) => {
 							return (
-								<div className="dog" key={index}>
-								<img src={dog.url} alt="dog" />
-								</div>
+								<Box className="dog" w='100%' p={4} color='white'>
+									<img src={dog.url} alt="dog" />
+								</Box>
 							)
 						})}
-					</div>
+					</Flex>
 				</>
 			)}
 		</div>
