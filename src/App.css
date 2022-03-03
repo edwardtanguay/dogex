@@ -25,6 +25,7 @@ body {
 
 .App h3 {
   color: #000;
+  cursor: pointer;
 }
 
 .App h1:not(:first-of-type) {
@@ -50,4 +51,5 @@ body {
 
 .App .returnButton {
   display: block;
+  margin: 0 0 10px 0;
 }

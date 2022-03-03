@@ -9,6 +9,7 @@ const url = 'https://api.thedogapi.com/v1/images/search?limit=5';
 function App() {
 	const [dogs, setDogs] = useState([]);
 	const [page, setPage] = useState('main');
+	const [detailsDog, setDetailsDog] = useState(null);
 
 	useEffect(() => {
 		(async () => {
@@ -26,8 +27,9 @@ function App() {
 		}
 	}
 
-	const togglePage = () => {
+	const togglePage = (dog = null) => {
 		const _page = page === 'main' ? 'details' : 'main';
+		setDetailsDog({ ...dog });
 		setPage(_page);
 	}
 
@@ -44,7 +46,7 @@ function App() {
 							{dogs.map((dog, index) => {
 								return (
 									<Box key={index} className="dog" w='100%' p={2}>
-										<h3 onClick={togglePage}>{getBreedName(dog)}</h3>
+										<h3 onClick={() => togglePage(dog)}>{getBreedName(dog)}</h3>
 										<img src={dog.url} alt="dog" />
 									</Box>
 								)
@@ -54,8 +56,15 @@ function App() {
 
 					{/* DETAILS PAGE */}
 					{page === 'details' && (
-						<div>details page
+						<div>
 							<Button className="returnButton" onClick={togglePage} colorScheme='blue'>Return</Button>
+							{detailsDog.breeds.length > 0 && (
+								<>
+									<h2>{detailsDog.breeds[0].name}</h2>
+									<div className="temperament">{detailsDog.breeds[0].temperament}</div>
+								</>
+							)}
+							<img src={detailsDog.url} alt="dog" />
 						</div>
 					)}
 

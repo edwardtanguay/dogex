@@ -5,5 +5,5 @@
 	- x show dummy title
 	- x show actual breed name (or none)
 	- x click on h3 and see dummy page with back click to see main page
-	- .. make return link
+	- x make return link
 
