@@ -20,6 +20,15 @@ function App() {
 				<>
 					<h1>Dog Breeds</h1>
 					<p>There are {breeds.length} breeds.</p>
+					<div className="breeds">
+						{breeds.map((breed, index) => {
+							return (
+								<div className="breed" key={index}>
+									
+								</div>
+							)
+						})}
+					</div>
 				</>
 			)}
 		</div>
