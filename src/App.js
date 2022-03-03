@@ -33,12 +33,10 @@ function App() {
 					<Flex className="container" color='white' flexWrap='wrap'>
 						{dogs.map((dog, index) => {
 							return (
-								<div key={index}>
-									<Box className="dog" w='100%' p={4} color='white'>
-										<h3>{getBreedName(dog)}</h3>
-										<img src={dog.url} alt="dog" />
-									</Box>
-								</div>
+								<Box key={index} className="dog" w='100%' p={2}>
+									<h3>{getBreedName(dog)}</h3>
+									<img src={dog.url} alt="dog" />
+								</Box>
 							)
 						})}
 					</Flex>

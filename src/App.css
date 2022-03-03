@@ -1,6 +1,5 @@
 body {
   background: #333;
-  color: #ccc;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
@@ -25,6 +24,10 @@ body {
   padding: 5px;
 }
 
+.App h3 {
+  color: #000;
+}
+
 .App h1:not(:first-of-type) {
   margin-top: 20px;
 }
@@ -34,12 +37,14 @@ body {
   margin: 0 0 0 30px;
 }
 
-.App .container .dog {
-  max-width: 300px;
+@media (min-width: 578px) {
+  .App .container .dog {
+    max-width: 300px;
+  }
 }
 
 @media (max-width: 577px) {
   .App .container .dog {
-    max-width: 300px;
+    width: 500px;
   }
 }
