@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.scss';
-import { Flex } from '@chakra-ui/react'
-import { Box } from '@chakra-ui/react'
-import { Button } from '@chakra-ui/react'
+import { Flex, Box, Button } from '@chakra-ui/react'
 
 const url = 'https://api.thedogapi.com/v1/images/search?limit=5';
 
